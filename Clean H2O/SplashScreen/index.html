@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Water Initiative</title>
+    <link rel="stylesheet" href="splashScreen.css">
+</head>
+<body>
+    <div id="splash-screen" class="splash-screen">
+        <div id="content-container" class="content-container">
+            <div class="ripple-container">
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+            </div>
+            <img src="/SplashScreenImages/logo.jpg" alt="Clean Water Logo" id="logo">
+        </div>
+
+        <div id="team-container" class="team-container">
+            <div class="team-header"> 
+                <p>Welcome to</p>
+                <h1 id="cleanwat">Clean H<sub>2</sub>O</h1>
+                <p>A website dedicated to the Clean Water and Sanitation Initiative by the United Nations</p>
+            </div>
+
+            <div id="loadingGIF">
+                <img src="/SplashScreenImages/loading.gif" alt="loading image">
+            </div>
+            
+            <div id="teamMembers" class="teamMembers">
+                <h2>Created By:</h2>
+                <table id="imageTable">
+                    <tr>
+                        <td><img class="groupImages"  src="/SplashScreenImages/pansilu.png" alt="member1"></td>
+                        <td><img class="groupImages"  src="/SplashScreenImages/denuka.png" alt="member1"></td>
+                        <td><img class="groupImages"  src="/SplashScreenImages/hakam.png" alt="member1"></td>
+                        <td><img class="groupImages"  src="/SplashScreenImages/thushal.png" alt="member1"></td>
+                    </tr>
+                    <tr>
+                        <td>Pansilu Perera</td>
+                        <td>Denuka Senadheera</td>
+                        <td>Abdul Hakam</td>
+                        <td>Thushal Dilsara</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const splashScreen = document.getElementById('splash-screen');
+            const contentContainer = document.getElementById('content-container');
+            const teamContainer = document.getElementById('team-container');
+            const teamMembers = document.getElementById('teamMembers');
+
+            setTimeout(() => {
+                contentContainer.style.opacity = '0';
+            }, 8000); // Start fading out content container at 9 seconds
+
+            setTimeout(() => {
+                contentContainer.style.display = 'none';
+                teamContainer.style.display = 'block';
+                setTimeout(() => {
+                    teamContainer.classList.add('fadein');
+                }, 100); // Delay adding fadein class for smoother transition
+                 setTimeout(() => {
+                    teamMembers.style.display ='block';
+                    teamMembers.style.opacity = '1';
+                }, 3000);
+            }, 9000); // Hide content container and show team container at 10 seconds
+
+            setTimeout(() => {
+                window.location.href = 'main.html'; // Replace with the URL of your main webpage
+            }, 15000); // Redirect after showing the team for an additional 6 seconds
+        });
+    </script>
+</body>
+</html>
