@@ -1,3 +1,3 @@
 Enter the website using the following link:
 
-<a href="
+<a href="SplashScreen/index.html"> Clean H<sub>2</sub>O </a>
