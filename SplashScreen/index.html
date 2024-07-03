@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clean Water Initiative</title>
+    <title>Clean H₂O</title>
     <link rel="stylesheet" href="splashScreen.css">
 </head>
 <body>
@@ -11,21 +11,19 @@
         <div id="content-container" class="content-container">
             <div class="ripple-container">
                 <div class="ripple"></div>
-                <div class="ripple"></div>
-                <div class="ripple"></div>
             </div>
-            <img src="SplashScreenImages/logo.jpg" alt="Clean Water Logo" id="logo">
+            <img src="SplashScreenImages/cleanh20logo.png" alt="Clean Water Logo" id="logo">
         </div>
 
         <div id="team-container" class="team-container">
             <div class="team-header"> 
                 <p>Welcome to</p>
-                <h1 id="cleanwat">Clean H<sub>2</sub>O</h1>
-                <p>A website dedicated to the Clean Water and Sanitation Initiative by the United Nations</p>
+                <img id="headerLogo" src="SplashScreenImages/headerlogo.png" alt="headerlogo">
+                <p>A website dedicated to the <em> SDGS 6: Clean Water and Sanitation Initiative </em>by the United Nations</p>
             </div>
 
             <div id="loadingGIF">
-                <img src="SplashScreenImages/loading.gif" alt="loading image">
+                <img id="loadingBar" src="SplashScreenImages/loading.gif" alt="loadingImage" >
             </div>
             
             <div id="teamMembers" class="teamMembers">
@@ -33,9 +31,9 @@
                 <table id="imageTable">
                     <tr>
                         <td><img class="groupImages"  src="SplashScreenImages/pansilu.png" alt="member1"></td>
-                        <td><img class="groupImages"  src="SplashScreenImages/denuka.png" alt="member1"></td>
-                        <td><img class="groupImages"  src="SplashScreenImages/hakam.png" alt="member1"></td>
-                        <td><img class="groupImages"  src="SplashScreenImages/thushal.png" alt="member1"></td>
+                        <td><img class="groupImages"  src="SplashScreenImages/denuka.png" alt="member2"></td>
+                        <td><img class="groupImages"  src="SplashScreenImages/hakam.png" alt="member3"></td>
+                        <td><img class="groupImages"  src="SplashScreenImages/thushal.png" alt="member4"></td>
                     </tr>
                     <tr>
                         <td>Pansilu Perera</td>
@@ -58,23 +56,23 @@
 
             setTimeout(() => {
                 contentContainer.style.opacity = '0';
-            }, 8000); // Start fading out content container at 9 seconds
+            }, 4000);
 
             setTimeout(() => {
                 contentContainer.style.display = 'none';
                 teamContainer.style.display = 'block';
                 setTimeout(() => {
                     teamContainer.classList.add('fadein');
-                }, 100); // Delay adding fadein class for smoother transition
+                }, 100);
                  setTimeout(() => {
                     teamMembers.style.display ='block';
                     teamMembers.style.opacity = '1';
-                }, 3000);
-            }, 9000); // Hide content container and show team container at 10 seconds
+                }, 1500);
+            }, 5000); 
 
             setTimeout(() => {
-                window.location.href = 'main.html'; // Replace with the URL of your main webpage
-            }, 17000); // Redirect after showing the team for an additional 6 seconds
+              window.location.href = '../Mainpage/main.html';
+            }, 10000); 
         });
     </script>
 </body>
