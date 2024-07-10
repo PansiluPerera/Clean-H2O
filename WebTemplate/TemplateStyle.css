@@ -1,0 +1,96 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:  #a2dcfb;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:  #ffffff;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+}
+#Mlogo {
+    width: 300px;
+}
+#Hnavigator {
+    background-color: none;
+}
+#Hnavigator ul {
+    margin: 50px;
+    padding: 50px;
+    list-style: none;
+    display: flex;
+}
+#Hnavigator a {
+    font-weight: bold;
+    color: #005f8b;
+    text-align: center;
+    padding: 20px 38px;
+    text-decoration: none;
+}
+#Hnavigator a:hover {
+    background-color: rgba(94, 217, 255, 0.514);
+    color: #1B1A55;
+    border-radius: 30px;
+}
+
+#content {
+    padding:80%;
+}
+
+#Slogo {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+
+#taskbar {
+    background-color: #ffffff;
+    padding-top: 3.5%;
+    padding-bottom: 0.5%;
+}
+
+#taskbar img{
+    transition: all 0.5s ease;
+}
+
+#taskbar img:hover{
+    filter: invert(100%);
+}
+
+#Fnavigator {
+    background-color: none;
+}
+#Fnavigator ul {
+    margin: 30px;
+    padding: 30px;
+    list-style: none;
+    display: flex;
+}
+#Fnavigator a {
+    color: #005f8b;
+    text-align: center;
+    padding: 20px 40px;
+    text-decoration: none;
+}
+#Fnavigator a:hover {
+    background-color: rgba(94, 217, 255, 0.514);
+    color: #1B1A55;
+    border-radius: 30px;
+}
+
+#Copyrights {
+    font-size: smaller;
+    color:#005f8b;
+    text-align: center;
+}

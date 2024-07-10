@@ -71,13 +71,12 @@ body, html {
 
 .team-container {
     background-color: rgba(94, 217, 255, 0.514);
-    border-bottom-left-radius: 200px;
-    border-bottom-right-radius: 200px;
+    border-radius: 300px;
     display: none;
     text-align: center;
     color: #005f8b; 
     position: absolute;
-    width: 100%;
+    width: 80%;
     height: 40%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -89,10 +88,12 @@ body, html {
 }
 
 #teamMembers {
+    font-size: 14px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    justify-content: center;
     opacity: 0;
     transition: opacity 1s ease-in-out; 
 }
@@ -102,8 +103,8 @@ body, html {
 }
 
 .groupImages{
-    width: 150px;
-    height: 200px;
+    width: 170px;
+    height: auto;
     border-radius: 20px;
 }
 
@@ -116,7 +117,6 @@ body, html {
 }
 
 #imageTable td{
-    font-size: larger;
     padding:10px;
     text-align: center;
 }
@@ -132,7 +132,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40%;
+    height: 33%;
 }
 
 #loadingBar{
@@ -140,3 +140,6 @@ body, html {
     height: auto;
     
 }
+
+
+
