@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="checkout.css">
+    <title>Checkout</title>
+</head>
+<body>
+<!-- header template -->
+    <header>
+        <div id="header">
+            <a href="../SplashScreen/ExampleMain.html">
+            <img src="ShopImages/headerlogo.png" id="Mlogo" alt="Clean H2O"></a>
+            <ul id="Hnavigator">
+                <li><a href="../SplashScreen/ExampleMain.html">Home</a></li>
+                <li><a href="#GalleryPage">Gallery</a></li>
+                <li><a href="../Shop/shop.html">Shop</a></li>
+                <li><a href="#UserProfile">User Profile</a></li>
+            </ul>
+        </div>
+    </header>
+   
+    <div id="content">
+        <div id="checkoutHeader">
+            <h1> Checkout </h1>
+            <h4>*To edit cart items, please go back to the shop page.</h4>
+            <h4>*All fields are required to place the order.</h4>
+        </div>
+<!-- cart items are loaded from local storage here -->
+        <div id="shopCart">
+            <h2><em>Cart</em><span id="itemCount">0</span></h2>
+            <ul id="cartItems"></ul>
+            <hr>
+            <p><b>Grand Total: </b><span id="grandTotal">LKR 0</span></p>
+            <button type="button" id="placeOrderButton">Place Order</button>
+        </div>
+
+<!-- form created to get details from user -->
+ <!-- important fields are checked with patterns to validate through html5 then through javascript as well -->
+        <form id="checkoutForm">
+            <fieldset>
+                <legend> Personal Details </legend>
+                <div id="personalName" class="checkoutDetails">
+                    <label for="firstN"> First Name</label>
+                    <input type="text" id="firstN" placeholder="Peter" required>
+
+                    <label for="lastN"> Last Name</label>
+                    <input type="text" id="lastN" placeholder="Parker" required>
+                </div>
+                <div id="personalContact" class="checkoutDetails">
+                    <label for="mobile"> Mobile Number (with country code) </label>
+                    <input type="text" id="mobile" placeholder="+94*********" required pattern="^\+\d{1,3}\d{9,10}$">
+
+                    <label for="email"> E - Mail</label>
+                    <input type="email" id="email" placeholder="someone@gmail.com" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend> Delivery Details </legend>
+
+                <div id="addressDetails" class="checkoutDetails">
+                    <label for="mainAdd"> Primary Address</label>
+                    <input type="text" id="mainAdd" placeholder="No.221 B" required>
+
+                    <label for="streetAdd"> Street </label>
+                    <input type="text" id="streetAdd" placeholder="Baker Street" required>
+                </div>
+
+                <div id="locationDetails" class="checkoutDetails">
+                    <label for="city"> City</label>
+                    <input type="text" id="city" placeholder="Panadura" required>
+
+                    <label for="district"> District/State </label>
+                    <input type="text" id="district" placeholder="Kalutara" required>
+
+                    <label for="zipCode"> Postal Code </label>
+                    <input type="text" id="zipCode" placeholder="12500" required>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend> Payment Details </legend>
+
+                <div id="cardDetailsFirst" class="checkoutDetails">
+                    <label for="cardName"> Card Holder's Name</label>
+                    <input type="text" id="cardName" placeholder="Peter Parker" required>
+
+                    <label for="cardNumber"> Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="*************4256" required pattern="^\d{16}$">
+                </div>
+                <div id="cardDetailsSecond" class="checkoutDetails">
+                    <label for="cardExpDate"> Expiry Date </label>
+                    <input type="text" id="cardExpDate" placeholder="mm/yy" required pattern="^(0[1-9]|1[0-2])\/\d{2}$">
+
+                    <label for="cardCVV"> CVV Pin</label>
+                    <input type="text" id="cardCVV" placeholder="3 Digit Pin" required pattern="^\d{3}$">
+                </div>
+            </fieldset>
+
+        </form>
+
+    </div>
+
+    
+<!-- footer template -->
+    <footer>
+        <div class="taskbar">
+            <a href="#contactus"><img src="ShopImages/WA.png" class="Slogo" alt="socialmedialogo 1"></a>
+            <a href="#contactus"><img src="ShopImages/Instagram.png" class="Slogo" alt="socialmedialogo 2"></a>
+            <a href="#contactus"><img src="ShopImages/TikTok.png" class="Slogo" alt="socialmedialogo 3"></a>
+            <a href="#contactus"><img src="ShopImages/Google.png" class="Slogo" alt="socialmedialogo 4"></a>
+            <a href="#contactus"><img src="ShopImages/YouTube.png" class="Slogo" alt="socialmedialogo 5"></a>
+        </div>
+        <div class="taskbar">
+                <ul id="Fnavigator">
+                    <li><a href="../SplashScreen/ExampleMain.html"><b>Home</b></a></li>
+                    <li><a href="#Smap"><b>Sitemap</b></a></li>
+                    <li><a href="#FeedBack"><b>Feedback</b></a></li>
+                </ul>
+        </div>
+        <div class="taskbar">
+            <p id="Copyrights"><b>Copyright ©2024 Designed by GROUP F | GROUP 6</b></p>
+        </div>
+    </footer>  
+
+    <div id="orderPlacedOverlay">
+        <img src="ShopImages/orderplace.png" alt="Order Placed">
+    </div>
+
+    <script>
+        // script loads when site is loaded using ContentLoaded
+        document.addEventListener('DOMContentLoaded', () => {
+
+            //cart items are retrieved from local storage and parsed
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsEl = document.getElementById('cartItems');
+            const grandTotalEl = document.getElementById('grandTotal');
+            const itemCountEl = document.getElementById('itemCount');
+            const placeOrderButton = document.getElementById('placeOrderButton');
+            const orderPlacedOverlay = document.getElementById('orderPlacedOverlay');
+            const checkoutForm = document.getElementById('checkoutForm');
+
+            function updateCartDisplay() {
+                cartItemsEl.innerHTML = '';
+
+                let grandTotal = 0;
+                let itemCount = 0;
+
+                cart.forEach(item => {
+                    const cartItemEl = document.createElement('li');
+                    cartItemEl.innerHTML = `
+                        <span class="itemDetails">${item.name} x ${item.quantity}</span>
+                        <span class="itemPrice">LKR ${item.totalPrice}</span>
+                    `;
+                    cartItemsEl.appendChild(cartItemEl);
+
+                    grandTotal += item.totalPrice;
+                    itemCount += item.quantity;
+                });
+
+                grandTotalEl.textContent = `LKR ${grandTotal}`;
+                itemCountEl.textContent = itemCount;
+
+                if (cart.length === 0) {
+                    cartItemsEl.innerHTML = 'No products added.';
+                }
+            }
+            //event listener added to place order button
+            placeOrderButton.addEventListener('click', (event) => {
+                
+                        // Validate form fields when clicked
+                        // if erro, alert prompt will displayed to the user
+                if (!checkoutForm.checkValidity()) {
+                    event.preventDefault();
+                    alert('Please fill all fields with valid information');
+                    return;
+                }
+
+
+                // Show the overlay after placing oreder
+                orderPlacedOverlay.style.display = 'flex';
+
+                setTimeout(() => {
+                    localStorage.removeItem('cart');
+                    window.location.href = 'shop.html';
+                }, 5000); // Redirect after 5 seconds back to the shop page after zeroing cart and removing array from memory
+            });
+
+            
+            updateCartDisplay();
+        });
+    </script>
+    
+</body>
+</html>

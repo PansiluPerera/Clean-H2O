@@ -1,3 +1,4 @@
+/* Header and Footer CSS styling tags */
 body, html {
     margin: 0;
     padding: 0;
@@ -21,14 +22,15 @@ body, html {
 #Mlogo {
     width: 300px;
 }
-#Hnavigator {
-    background-color: none;
-}
 #Hnavigator ul {
     margin: 50px;
     padding: 50px;
     list-style: none;
     display: flex;
+}
+#Hnavigator li {
+    display: inline;
+    list-style: none;
 }
 #Hnavigator a {
     font-weight: bold;
@@ -41,36 +43,45 @@ body, html {
     background-color: rgba(94, 217, 255, 0.514);
     color: #1B1A55;
     border-radius: 30px;
+    transition: 0.4s;
 }
 
 #content {
-    padding:80%;
+    padding-top: 80%;
+    margin: auto;
 }
 
-#Slogo {
+.Slogo {
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    padding: 2px;
 }
 
 
-#taskbar {
+.taskbar {
+    display: flex;
     background-color: #ffffff;
-    padding-top: 3.5%;
+    padding-top: 1%;
     padding-bottom: 0.5%;
+    align-items: center;
+    justify-content: center;
 }
 
-#taskbar img{
+.taskbar img{
     transition: all 0.5s ease;
 }
 
-#taskbar img:hover{
+.taskbar img:hover{
     filter: invert(100%);
 }
 
-#Fnavigator {
-    background-color: none;
+
+#Fnavigator li {
+    display: inline;
+    list-style: none;
 }
+
 #Fnavigator ul {
     margin: 30px;
     padding: 30px;
@@ -87,6 +98,7 @@ body, html {
     background-color: rgba(94, 217, 255, 0.514);
     color: #1B1A55;
     border-radius: 30px;
+    transition: 0.4s;
 }
 
 #Copyrights {

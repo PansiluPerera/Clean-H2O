@@ -51,7 +51,7 @@ body, html {
     background: radial-gradient(circle, rgba(0, 198, 248, 0.719) 20%, rgba(24, 188, 253, 0.541) 70%); 
     border-radius: 50%;
     opacity: 0;
-    animation: ripple 7s infinite;
+    animation: ripple 5s infinite;
 }
 
 

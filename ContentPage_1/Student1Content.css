@@ -1,0 +1,221 @@
+/* Header and Footer CSS styling tags */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:  #a2dcfb;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:  #ffffff;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+}
+#Mlogo {
+    width: 300px;
+}
+#Hnavigator li {
+    display: inline;
+    list-style: none;
+}
+#Hnavigator ul {
+    margin: 50px;
+    padding: 50px;
+    list-style: none;
+    display: flex;
+}
+#Hnavigator a {
+    font-weight: bold;
+    color: #005f8b;
+    text-align: center;
+    padding: 20px 38px;
+    text-decoration: none;
+}
+#Hnavigator a:hover {
+    background-color: rgba(94, 217, 255, 0.514);
+    color: #1B1A55;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+
+#content {
+    padding-top: 8%;
+    margin: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+.Slogo {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+
+.taskbar {
+    display: flex;
+    background-color: #ffffff;
+    padding-top: 1%;
+    padding-bottom: 0.5%;
+    align-items: center;
+    justify-content: center;
+}
+
+.taskbar img{
+    transition: all 0.5s ease;
+}
+
+.taskbar img:hover{
+    filter: invert(100%);
+}
+#Fnavigator li {
+    display: inline;
+    list-style: none;
+}
+#Fnavigator ul {
+    margin: 30px;
+    padding: 30px;
+    list-style: none;
+    display: flex;
+}
+#Fnavigator a {
+    color: #005f8b;
+    text-align: center;
+    padding: 20px 40px;
+    text-decoration: none;
+}
+#Fnavigator a:hover {
+    background-color: rgba(94, 217, 255, 0.514);
+    color: #1B1A55;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+
+#Copyrights {
+    font-size: smaller;
+    color:#005f8b;
+    text-align: center;
+}
+
+/* CSS styling for the content */
+
+#heading{
+    padding-top: 10%;
+}
+#contentHeading {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* import poppins google font directly */
+
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* text shadow added for outline */
+#contentHeading{
+    font-size: 45px;
+    color: white;
+    text-shadow: 
+        -2px -2px 0 #005f8b,  
+        2px -2px 0 #005f8b,  
+        -2px 2px 0 #005f8b,  
+        2px 2px 0 #005f8b,
+        0px 0px 3px #005f8b;
+
+        text-align: center;
+
+        transition: 0.3s transform ease-in-out ;
+}
+
+#contentHeading:hover{
+    transform: scale(1.1);
+}
+
+/* text shadow added for outline */
+#intro{
+    text-align: center;
+    color: white;
+    font-size: larger;
+    text-shadow: 
+        -1px -1px 0 #005f8b,  
+        1px -1px 0 #005f8b,  
+        -1px 1px 0 #005f8b,  
+        1px 1px 0 #005f8b;  
+
+    padding-bottom: 25%;
+}
+/* two transitions: greyscale to color and opacity change for images */
+.contentImage{
+    width: 50%;
+    display: flex;
+    opacity: 0.7;
+    filter: grayscale(100%);
+    transition: opacity 1s , filter 1s;
+    border-radius: 30px;
+
+}
+.contentImage:hover {
+    opacity: 1;
+    filter: grayscale(0%)
+
+}
+
+
+.imageContainer{
+    display: flex;
+    justify-content: left;
+    padding: 50px;
+    padding-bottom: 10%;
+}
+
+
+.imageDescription{
+    text-align: justify;
+    padding: 3%;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: larger;
+    line-height: 30px;
+    color: #005f8b;
+}
+#waterbanner {
+    width: 100vw; /* Full width of the viewport for the banner to spread */
+    margin-left: calc(-50vw + 50%); 
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; 
+} 
+
+/* hyperlinks stay the same even when visited, do not get highlighted */
+a:link, a:visited, a:hover, a:active {
+    color:#005f8b;
+}
+
+#chain{
+    display: flex;
+    padding: 5%;
+    background-color: white;
+    justify-content: center;
+}
+
+#chainImage{
+    width: 80%;
+}

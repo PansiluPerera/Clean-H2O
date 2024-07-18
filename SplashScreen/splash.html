@@ -7,14 +7,21 @@
     <link rel="stylesheet" href="splashScreen.css">
 </head>
 <body>
+
+<!-- two screens for the splash screen within one div container -->
     <div id="splash-screen" class="splash-screen">
         <div id="content-container" class="content-container">
+
+            <!-- first screen: with ripple -->
             <div class="ripple-container">
                 <div class="ripple"></div>
             </div>
+
+            <!-- logo centered on first screen -->
             <img src="SplashScreenImages/cleanh20logo.png" alt="Clean Water Logo" id="logo">
         </div>
 
+        <!-- after the first screen this container will be loaded -->
         <div id="team-container" class="team-container">
             <div class="team-header"> 
                 <p>Welcome to</p>
@@ -30,6 +37,8 @@
                 <div id="createdTeam">
                     <h2 id="createdBy">Created By:</h2>
                 </div>
+
+                <!-- table created to insert team info -->
                 <table id="imageTable">
                     <tr>
                         <td><img class="groupImages"  src="SplashScreenImages/pansilu.png" alt="member1"></td>
@@ -50,17 +59,26 @@
 
     </div>
     <script>
+
+        // script loads once the whole page is loaded using ContentLoaded function
         document.addEventListener('DOMContentLoaded', function() {
+
+            //variables implemented for html elements
             const splashScreen = document.getElementById('splash-screen');
             const contentContainer = document.getElementById('content-container');
             const teamContainer = document.getElementById('team-container');
             const teamMembers = document.getElementById('teamMembers');
 
+
+            // after 3 seconds the ripple will fade away
             setTimeout(() => {
                 contentContainer.style.opacity = '0';
-            }, 4000);
+            }, 3000);
 
+            // at 3.5 seconds, the team screen will appeaer using fade in transition
             setTimeout(() => {
+
+                //content contrainer is set as none at tis time and team contatiner is not displayed using 3.6s 
                 contentContainer.style.display = 'none';
                 teamContainer.style.display = 'block';
                 setTimeout(() => {
@@ -69,12 +87,13 @@
                  setTimeout(() => {
                     teamMembers.style.display ='flex';
                     teamMembers.style.opacity = '1';
-                }, 1500);
-            }, 5000); 
+                }, 500);
+            }, 3500); 
 
+            // redirects to the main page after a total of 6.5 seconds
             setTimeout(() => {
-             window.location.href = '../WebTemplate/WebTemplate.html';
-            }, 10000); 
+             window.location.href = 'ExampleMain.html';
+            }, 6500); 
         });
     </script>
 </body>

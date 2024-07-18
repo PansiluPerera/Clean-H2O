@@ -7,145 +7,240 @@
     <title>Clean H₂O Shop</title>
 </head>
 <body>
-
+<!-- header template -->
     <header>
         <div id="header">
-            <a href="../WebTemplate/WebTemplate.html">
-            <img src="../WebTemplate/TemplateImages/headerlogo.png" id="Mlogo" alt="Clean H2O"></a>
+            <a href="../SplashScreen/ExampleMain.html">
+            <img src="ShopImages/headerlogo.png" id="Mlogo" alt="Clean H2O"></a>
             <ul id="Hnavigator">
-                <a href="#Home">Home</a>
-                <a href="#Gallery">Gallery</a>
-                <a href="../Shop/shop.html">Shop</a>
-                <a href="#UserP">User Profile</a>
+                <li><a href="../SplashScreen/ExampleMain.html">Home</a></li>
+                <li><a href="#GalleryPage">Gallery</a></li>
+                <li><a href="../Shop/shop.html">Shop</a></li>
+                <li><a href="#UserProfile">User Profile</a></li>
             </ul>
         </div>
     </header>
    
+    <!-- main content container within template -->
     <div id="content">
-        <br>
         <div id="shopHeader">
             <h1> Clean H₂O Products</h1>
             <h3> Here, you have the opportunity to shop for various products based on this initiative.</h3>
             <h4>*Please note that all prices mentioned are inclusive of taxes and delivery charges.</h4>
         </div>
     
+        <!-- cart created initially with count 0 -->
         <div id="shopCart">
-            <h2>Cart</h2>
-            <ul id="cartItems"></ul>
-            <button id="cartButton" onclick="location.href='checkout.html'">Checkout</button>
+            <h2><em>Cart</em><span id="itemCount">0</span></h2>
+            <ul id="cartItems">
+                <li>No products added yet.</li>
+            </ul>
+            <hr>
+            <p><b>Grand Total: </b><span id="grandTotal">LKR 0</span></p>
+            <button id="cartButton">Checkout</button>
         </div>
 
+        <!-- table utilized to present the items  -->
+         <!-- additional tr/td added to increase space between items -->
         <div id="shopItems">
             <table id="items">
                 <tr>
+                    <!-- all items have a seperate data-name and data-price which will be used in javascript to add to cart -->
                     <td class="itemBox">
                         <div class="item">
                             <img class="itemPic" src="ShopImages/1.png" alt="item1">
-                            <button class="addCart">+</button>
+                            <button class="addCart" id="tshirtAdd" data-name="Clean H₂O T-Shirt" data-price="1500">+</button>
                         </div>
                     </td>
                     <td></td>
                     <td class="itemBox">
                         <div class="item">
-                            <img class="itemPic" src="ShopImages/3.png" alt="item1">
-                            <button class="addCart">+</button>
+                            <img class="itemPic" src="ShopImages/3.png" alt="item2">
+                            <button class="addCart" id="mugAdd" data-name="Clean H₂O Mug" data-price="600">+</button>
                         </div>
                     </td>
                     <td></td>
                     <td class="itemBox">
                         <div class="item">
-                            <img class="itemPic" src="ShopImages/6.png" alt="item1">
-                            <button class="addCart">+</button>
+                            <img class="itemPic" src="ShopImages/6.png" alt="item3">
+                            <button class="addCart" id="bottleAdd" data-name="Clean H₂O Bottle" data-price="800">+</button>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td>Clean H<sub>2</sub>O T - Shirt<br><p class="description">portable water filter straw</p></td>
+                    <td>Clean H<sub>2</sub>O T - Shirt<br><p class="description">Support the clean water initiative with our exclusive Clean H<sub>2</sub>O T-Shirt</p></td>
                     <td></td>
-                    <td>Clean H<sub>2</sub>O Mug<br><p class="description">portable water filter straw</p></td>
+                    <td>Clean H<sub>2</sub>O Mug<br><p class="description">Support the clean water initiative with our exclusive Clean H<sub>2</sub>O Mug</p></td>
                     <td></td>
-                    <td>Clean H<sub>2</sub>O Bottle<br><p class="description">portable water filter straw</p></td>
+                    <td>Clean H<sub>2</sub>O Bottle<br><p class="description">Support the clean water initiative with our exclusive Clean H<sub>2</sub>O Water Bottle</p></td>
                 </tr>
                 <tr>
-                    <td class="price">LKR 2000.00</td>
+                    <td class="price">LKR 1500.00</td>
                     <td></td>
-                    <td class="price">LKR 2000.00</td>
+                    <td class="price">LKR 600.00</td>
                     <td></td>
-                    <td class="price">LKR 2000.00</td>
+                    <td class="price">LKR 800.00</td>
                 </tr>
                 <tr><td></td><td></td><td></td><td></td><td></td></tr>
                 <tr>
                     <td class="itemBox">
                         <div class="item">
-                            <img class="itemPic" src="ShopImages/8.png" alt="item1">
-                            <button class="addCart">+</button>
+                            <img class="itemPic" src="ShopImages/8.png" alt="item4">
+                            <button class="addCart" id="onepacketAdd" data-name="Water Purifier (S)" data-price="200">+</button>
                         </div>
                     </td>
                     <td></td>
 
                     <td class="itemBox">
                         <div class="item">
-                            <img class="itemPic" src="ShopImages/9.png" alt="item1">
-                            <button class="addCart">+</button>
+                            <img class="itemPic" src="ShopImages/9.png" alt="item5">
+                            <button class="addCart" id="tenpacketAdd" data-name="Water Purifier (L)" data-price="1900">+</button>
                         </div>
                     </td>
                     <td></td>
 
                     <td class="itemBox">
                         <div class="item">
-                            <img class="itemPic" src="ShopImages/10.png" alt="item1">
-                            <button class="addCart">+</button>
+                            <img class="itemPic" src="ShopImages/10.png" alt="item6">
+                            <button class="addCart" id="purifierAdd" data-name="Portable Water Purifier" data-price="1800">+</button>
                         </div>
                     </td>
 
                 </tr>
                 <tr>
-                    <td>Water Purifier<br>(1 Packet)<br><p class="description">portable water filter straw</p></td>
+                    <td>Water Purifier<br>(1 Packet)<br><p class="description">Ensure safe drinking water anywhere (Suitable for 10L)</p></td>
                     <td></td>
-                    <td>Water Purifier<br>(10 Packets)<br><p class="description">portable water filter straw</p></td>
+                    <td>Water Purifier<br>(10 Packets)<br><p class="description">Ensure safe drinking water anywhere (Suitable for 10L per packet)</p></td>
                     <td></td>
-                    <td>Portable Water Purifier<br>(800ml)<br><p class="description">portable water filter straw</p></td>
+                    <td>Portable Water Purifier<br>(800ml)<br><p class="description">Designed to remove 99.99% of bacteria, viruses, and contaminants.</p></td>
                 </tr>
                 <tr>
-                    <td class="price">LKR 2000.00</td>
+                    <td class="price">LKR 200.00</td>
                     <td></td>
-                    <td class="price">LKR 2000.00</td>
+                    <td class="price">LKR 1900.00</td>
                     <td></td>
-                    <td class="price">LKR 2000.00</td>
+                    <td class="price">LKR 1800.00</td>
                 </tr>
             </table>
         </div>
         <br><br><br><br>
     </div>
 
+    <!-- footer template -->
 
     <footer>
-        <div id="taskbar">
-            <center>
-                <img src="../WebTemplate/TemplateImages/WA.png" id="Slogo">
-                <img src="../WebTemplate/TemplateImages/Instagram.png" id="Slogo">
-                <img src="../WebTemplate/TemplateImages/TikTok.png" id="Slogo">
-                <img src="../WebTemplate/TemplateImages/Google.png" id="Slogo">
-                <img src="../WebTemplate/TemplateImages/YouTube.png" id="Slogo">
-
-                <br>
-                <br>
-
+        <div class="taskbar">
+                <a href="#contactus"><img src="ShopImages/WA.png" class="Slogo" alt="socialmedialogo 1"></a>
+                <a href="#contactus"><img src="ShopImages/Instagram.png" class="Slogo" alt="socialmedialogo 2"></a>
+                <a href="#contactus"><img src="ShopImages/TikTok.png" class="Slogo" alt="socialmedialogo 3"></a>
+                <a href="#contactus"><img src="ShopImages/Google.png" class="Slogo" alt="socialmedialogo 4"></a>
+                <a href="#contactus"><img src="ShopImages/YouTube.png" class="Slogo" alt="socialmedialogo 5"></a>
+        </div>
+        <div class="taskbar">
                 <ul id="Fnavigator">
-                    <a href="#Home"><b>Home</b></a>
-                    <a href="#Smap"><b>Sitemap</b></a>
-                    <a href="#FeedBack"><b>Feedback</b></a>
+                    <li><a href="../SplashScreen/ExampleMain.html"><b>Home</b></a></li>
+                    <li><a href="#Sitemap"><b>Sitemap</b></a></li>
+                    <li><a href="#FeedBack"><b>Feedback</b></a></li>
                 </ul>
-            </center>
-            <br>
-            <p id="Copyrights"><b>Copyright ©2024 Designed by GROUP F | GROUP 3</b></p>
+        </div>
+        <div class="taskbar">
+            <p id="Copyrights"><b>Copyright ©2024 Designed by GROUP F | GROUP 6</b></p>
         </div>
     </footer>  
     
     
 
     <script>
-        
+        // script loads when whole page is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // array created and stored in local browser storage so that the cart info is saved until checkout
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// variables implemented for javascript using html classes
+            const cartItemsEl = document.getElementById('cartItems');
+            const grandTotalEl = document.getElementById('grandTotal');
+            const itemCountEl = document.getElementById('itemCount');
+            const cartButton = document.getElementById('cartButton');
+
+            // once user press add to cart + button, it will get dataset.name and dataset.price and update array
+            const addCartButtons = document.querySelectorAll('.addCart');
+            addCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const itemName = button.dataset.name;
+                    const itemPrice = parseInt(button.dataset.price, 10);
+                    
+                    // Find if item is already in cart and edit quantity
+                    const existingItem = cart.find(item => item.name === itemName);
+                    if (existingItem) {
+                        existingItem.quantity++;
+                        existingItem.totalPrice += itemPrice;
+                    } else {
+                        cart.push({ name: itemName, price: itemPrice, quantity: 1, totalPrice: itemPrice });
+                    }
+
+                    updateCartDisplay();
+                });
+            });
+
+            function updateCartDisplay() {
+                cartItemsEl.innerHTML = '';
+
+                let grandTotal = 0;
+                let itemCount = 0;
+
+                // remove option added to remove item from array
+                cart.forEach(item => {
+                    const cartItemEl = document.createElement('li');
+                    cartItemEl.innerHTML = `
+                        <span class="removeItem" data-name="${item.name}">&#x1F5D1;</span>
+                        <span class="itemDetails">${item.name} x ${item.quantity}</span>
+                        <span class="itemPrice">LKR ${item.totalPrice}</span>
+                    `;
+                    cartItemEl.querySelector('.removeItem').addEventListener('click', () => {
+                        removeItemFromCart(item.name);
+                    });
+                    cartItemsEl.appendChild(cartItemEl);
+
+                    grandTotal += item.totalPrice;
+                    itemCount += item.quantity;
+                });
+
+                grandTotalEl.textContent = `LKR ${grandTotal}`;
+                itemCountEl.textContent = itemCount;
+
+                // validate if even 1 item is available or not to buy
+                if (cart.length === 0) {
+                    cartItemsEl.innerHTML = 'No products added.';
+                }
+
+                // array saved to local storage
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+
+            function removeItemFromCart(itemName) {
+                const itemIndex = cart.findIndex(item => item.name === itemName);
+                if (itemIndex > -1) {
+                    cart.splice(itemIndex, 1);
+                }
+                updateCartDisplay();
+            }
+
+            // Initial display update for ther cart
+            updateCartDisplay();
+
+            cartButton.addEventListener('click', () => {
+
+                // event listener added to check whether button is clicked
+                console.log('Checkout button clicked'); 
+                if (cart.length === 0) {
+                    alert('Please add at least 1 item to your cart.');
+                } 
+                else {
+                    window.location.href = 'checkout.html'; // redirects to the checkout page
+                }
+            });
+        });
     </script>
     
 </body>
